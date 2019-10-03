@@ -9,7 +9,7 @@ phases:
       - AWS_DEFAULT_REGION=us-west-2
       - AWS_ACCOUNT_ID=356566070122
       - CLUSTER_NAME=gs-us-west-2
-      - ROLE_ARN=arn:aws:iam::356566070122:role/eksctl-gs-us-west-2-nodegroup-mix-NodeInstanceRole-N3JQ8PJ2FEKS
+      - ROLE_ARN=arn:aws:iam::356566070122:role/EksWorkshopCodeBuildKubectlRole
   build:
     commands:
       - echo Build started on `date`
@@ -24,5 +24,5 @@ phases:
       - echo Build completed on `date`
       - aws configure set default.region ${AWS_DEFAULT_REGION}
       - aws configure get default.region
-      - aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${CLUSTER_NAME} 
+      - aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${CLUSTER_NAME} --role-arn ${ROLE_ARN}
       - kubectl get svc
