@@ -6,9 +6,9 @@ phases:
       docker: 18
   pre_build:
     commands:
-      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_REGION=us-west-2
       - AWS_ACCOUNT_ID=356566070122
-      - CLUSTER_NAME=gs-us-east-1
+      - CLUSTER_NAME=gs-us-west-2
       - ROLE_ARN=arn:aws:iam::356566070122:role/EksWorkshopCodeBuildKubectlRole
   build:
     commands:
