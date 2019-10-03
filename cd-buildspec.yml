@@ -8,7 +8,7 @@ phases:
     commands:
       - AWS_DEFAULT_REGION=us-west-2
       - AWS_ACCOUNT_ID=356566070122
-      - CLUSTER_NAME=gs-us-west-2.us-west-2.eksctl.io
+      - CLUSTER_NAME=gs-us-west-2
   build:
     commands:
       - echo Build started on `date`
