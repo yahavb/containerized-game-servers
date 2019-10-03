@@ -9,7 +9,7 @@ phases:
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCOUNT_ID=356566070122
       - CLUSTER_NAME=gs-us-east-1
-      - ROLE_ARN=arn:aws:iam::356566070122:role/EksWorkshopCodeBuildKubectlRole
+      - ROLE_ARN=arn:aws:iam::356566070122:role/codebuild-kubectl-us-east-1
   build:
     commands:
       - echo Build started on `date`
