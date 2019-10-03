@@ -8,6 +8,7 @@ phases:
     commands:
       - AWS_DEFAULT_REGION=us-west-2
       - AWS_ACCOUNT_ID=356566070122
+      - CLUSTER_NAME=gs-us-west-2.us-west-2.eksctl.io
   build:
     commands:
       - echo Build started on `date`
@@ -22,5 +23,5 @@ phases:
       - echo Build completed on `date`
       - aws configure set default.region ${AWS_DEFAULT_REGION}
       - aws configure get default.region
-      - find ~/.ssh
-      - find ~/.kube
+      - aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${CLUSTER_NAME}
+      - kubectl get svc
