@@ -24,4 +24,4 @@ phases:
       - aws configure set default.region ${AWS_DEFAULT_REGION}
       - aws configure get default.region
       - aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${CLUSTER_NAME}
-      - kubectl get svc
+      - cat ~/.kube/config
