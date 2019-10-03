@@ -22,4 +22,5 @@ phases:
       - echo Build completed on `date`
       - aws configure set default.region ${AWS_DEFAULT_REGION}
       - aws configure get default.region
-      - kubectl version
+      - find ~/.ssh
+      - find ~/.kube
