@@ -21,5 +21,5 @@ phases:
       - aws configure set default.region ${AWS_DEFAULT_REGION}
       - aws configure get default.region
       - aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${CLUSTER_NAME} --role-arn ${ROLE_ARN}
-      - kubectl delete po -n default `kubectl get po -n default | grep multiplayersample| grep 9-s`
+      - kubectl delete po `kubectl get po | grep multiplayersample| grep 9-s|awk '{print $1}'`
       - kubectl get po -n default
