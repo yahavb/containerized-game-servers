@@ -21,4 +21,4 @@ phases:
       - aws configure set default.region ${AWS_DEFAULT_REGION}
       - aws configure get default.region
       - aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${CLUSTER_NAME} --role-arn ${ROLE_ARN}
-      - kubectl get svc
+      - kubectl get po -n default
